@@ -17,11 +17,6 @@ app.get('/', (req, res) => {
 });
 const PORT = process.env.PORT || 2000;
 
-(async () => {
-  const { ping } = await import('keepalive-server');
-  ping(86400000, 'https://note-application-be.onrender.com');
-})();
-
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
